@@ -26,9 +26,15 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: ls -al /
+        run: ls -al
 
       # Install nginx
-      - name: nginx
-        run: sudo apt install nginx
+      - name: Copy files to prod server
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ../
+          remote: /root/var/www/html
+          host: ${{ secrets.PROD_IP }}
+          username: ${{ secrets.CLOUD_USER }}
+          password: ${{ secrets.PASSWORD }}
 
