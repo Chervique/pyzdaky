@@ -30,11 +30,5 @@ jobs:
 
       # Install nginx
       - name: Copy files to prod server
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ../
-          remote: /root/var/www/html
-          host: ${{ secrets.PROD_IP }}
-          username: ${{ secrets.CLOUD_USER }}
-          password: ${{ secrets.PASSWORD }}
+  
 
