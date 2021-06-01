@@ -28,7 +28,5 @@ jobs:
       - name: Run a one-line script
         run: ls -al
 
-      # Install nginx
-      - name: Copy files to prod server
-  
+    
 
